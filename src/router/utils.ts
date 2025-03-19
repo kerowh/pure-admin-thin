@@ -210,6 +210,7 @@ function initRouter() {
       });
     }
   } else {
+    console.log("动态路由未开启缓存");
     return new Promise(resolve => {
       getAsyncRoutes().then(({ data }) => {
         handleAsyncRoutes(cloneDeep(data));

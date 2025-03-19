@@ -54,6 +54,24 @@ const permissionRouter = {
     }
   ]
 };
+const testRouter = {
+  path: "/test",
+  meta: {
+    title: "测试",
+    icon: "ep:lollipop",
+    rank: 11
+  },
+  children: [
+    {
+      path: "/test1",
+      component: "/test/index",
+      name: "TestPage",
+      meta: {
+        title: "测试页面"
+      }
+    }
+  ]
+};
 
 export default defineFakeRoute([
   {
@@ -62,7 +80,7 @@ export default defineFakeRoute([
     response: () => {
       return {
         success: true,
-        data: [permissionRouter]
+        data: [permissionRouter, testRouter]
       };
     }
   }
